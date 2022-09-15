@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/UI.gd" type="Script" id=1]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="Left" type="Button" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 16.9897
+margin_top = -162.986
+margin_right = 100.99
+margin_bottom = -22.9862
+text = "<"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Right" type="Button" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 133.71
+margin_top = -162.986
+margin_right = 217.71
+margin_bottom = -22.9862
+text = ">"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Jump" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -109.198
+margin_top = -172.758
+margin_right = -25.1985
+margin_bottom = -32.7581
+action_mode = 0
+text = "/\\"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="Left" to="." method="_on_Left_button_down"]
+[connection signal="button_up" from="Left" to="." method="_dont_Move"]
+[connection signal="button_down" from="Right" to="." method="_on_Right_button_down"]
+[connection signal="button_up" from="Right" to="." method="_dont_Move"]
+[connection signal="button_up" from="Jump" to="." method="Jump"]
